@@ -1,0 +1,127 @@
+<section data-ng-controller="PacketsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Packets</h1>
+    </div>
+<h3>Check your Packetes</h3>
+<div class="col-md-12">
+    <pre><code>{{ shellscript }}</code></pre>
+</div>
+
+<div class="col-md-3">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>Shell Packetes</h3>
+            <h5 class="">Pakete: {{packets.shell.length}}</h5>
+            <h5 class="">Makiert: {{checked.shell.length}}</h5>
+            <input type="text" placeholder="filter" class="form-control" ng-model="shellfilter">
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li 
+                        class="list-group-item" 
+                        ng-class="!checked.shell.indexOf(value) ? 'active' : ''" 
+                        ng-repeat="(key, value) in packets.shell | filter : shellfilter" 
+                        ng-click="mark(this , 'shell');">
+                        {{value}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>Node Packetes</h3>
+            <h5 class="">Pakete: {{packets.node.length}}</h5>
+            <h5 class="">Makiert: {{checked.node.length}}</h5>
+            <input type="text" placeholder="filter" class="form-control" ng-model="nodefilter">
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li 
+                        class="list-group-item" 
+                        ng-class="!checked.node.indexOf(value) ? 'active' : ''" 
+                        ng-repeat="(key, value) in packets.node | filter : nodefilter" 
+                        ng-click="mark(this,'node');">
+                        {{value}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>DPKG Packetes</h3>
+            <h5 class="">Pakete: {{packets.dpkg.length}}</h5>
+            <h5 class="">Makiert: {{checked.dpkg.length}}</h5>
+            <input type="text" placeholder="filter" class="form-control" ng-model="dpkgfilter">
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li 
+                        class="list-group-item" 
+                        ng-class="!checked.dpkg.indexOf(value) ? 'active' : ''" 
+                        ng-repeat="(key, value) in packets.dpkg | filter: dpkgfilter" 
+                        ng-click="mark(this,'dpkg');">
+                        {{value.name}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>Other Tools</h3>
+            <h5 class="">Pakete: {{packets.other.length}}</h5>
+            <h5 class="">Makiert: {{checked.other.length}}</h5>
+            <input type="text" placeholder="filter" class="form-control" ng-model="otherfilter">
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    <li 
+                        class="list-group-item" 
+                        ng-class="!checked.other.indexOf(value) ? 'active' : ''" 
+                        ng-repeat="(key, value) in packets.other | filter: otherfilter" 
+                        ng-click="mark(this,'other');">
+                        {{value.name}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button class="btn btn-primary" ng-click="checkout();">Checkout</button>
+
+
+
+
+    <!-- 
+    <div class="list-group">
+        <a data-ng-repeat="packet in packets" data-ng-href="#!/packets/{{packet._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="packet.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="packet.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="packet.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!packets.$resolved || packets.length">
+    	No Packets yet, why don't you <a href="/#!/packets/create">create one</a>?
+    </div>
+    -->
+</section>

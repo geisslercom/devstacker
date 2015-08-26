@@ -1,0 +1,136 @@
+{
+	"shell" : [
+		"rhythmbox",
+		"rsync",
+		"ruby",
+		"ruby-dev",
+		"zsh",
+		"apache2",
+		"android-tools-adb",
+		"hgtortoise",
+		"hgtortoise-nautilus",
+		"android-tools-fastboot",
+		"hardinfo",
+		"docky",
+		"evolution",
+		"g++",
+		"gcc",
+		"ftp",
+		"js",
+		"curl",
+		"wget",
+		"gparted",
+		"golang",
+		"htop",
+		"mysql-server",
+		"mysql-workbench",
+		"git",
+		"mercurial",
+		"vim",
+		"openssh-server",
+		"php5",
+		"php5-curl",
+		"php5-gd",
+		"python",
+		"python2.7",
+		"python3",
+		"pulseaudio"
+	],
+
+	"node" : [
+		"grunt-cli",
+		"less",
+		"coffee",
+		"mocha",
+		"firebase-tools",
+		"npm",
+		"flightplan",
+		"yo",
+		"generator-angularfire",
+		"generator-angular",
+		"generator-chrome-extension",
+		"generator-node-webkit"
+	],
+
+	"dpkg" : [
+		{	
+			"name" : "smartgit",
+			"version" : "6_5_9",
+			"arch" : "multi",
+			"link" : "http://www.syntevo.com/smartgit/download?file=smartgit/smartgit-6_5_9.deb"
+		},
+		{	
+			"name" : "sublime",
+			"version" : "build-3083",
+			"arch" : "amd64",
+			"link" : "http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3083_amd64.deb"
+		},
+		{	
+			"name"  : "teamviewer",
+			"version" : "current",
+			"arch" : "multi",
+			"link" : "http://download.teamviewer.com/download/teamviewer_i386.deb"
+		},
+		{	
+			"name" : "google-chrome",
+			"version" : "current",
+			"arch" : "amd64",
+			"link" : "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+		},
+		{	
+			"name" : "birdie",
+			"version" : "1.1.0.r421",
+			"arch" : "amd64",
+			"link" : "https://github.com/birdieapp/birdie/releases/download/1.1/birdie_1.1.0.r421.pkg19.ubuntu14.04.1_amd64.deb"
+		}
+	],
+	"bin" : [
+		{
+			"name" : "mongoDB",
+			"version" : "3.0.5",
+			"link" : "https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1410-clang-3.0.5.tgz",
+			"file" : "mongodb-linux-x86_64-ubuntu1410-clang-3.0.5.tgz",
+			"source" : "mongodb-linux-x86_64-ubuntu1410-clang-3.0.5",
+			"target" : "/usr/local/mongodb",
+			"bin" : "/usr/local/mongodb/bin"
+		},
+		{
+			"name" : "node",
+			"version" : "0.12.7",
+			"link" : "https://nodejs.org/dist/0.12.7/node-0.12.7-linux-x64.tar.gz",
+			"file" : "node-0.12.7-linux-x64.tar.gz",
+			"source" : "node-0.12.7-linux-x64",
+			"target" : "/usr/local",
+			"bin" : "/usr/local/node-0.12.7-linux-x64:$PATH"
+		},
+		{
+			"name" : "testdisk-7",
+			"version" : "7.0",
+			"link" : "http://www.cgsecurity.org/testdisk-7.0.linux26-x86_64.tar.bz2",
+			"file" : "testdisk-7.0.linux26-x86_64.tar.bz2",
+			"source" : "testdisk-7.0",
+			"target" : "/usr/local",
+			"bin" : "/usr/local/testdisk-7.0:$PATH"
+		}
+	],
+	"other" : [
+		{
+			"name" : "compass",
+			"dep" : "shell.ruby",
+			"tmpl" : "ruby.sh"
+		},
+		{
+			"name" : "composer",
+			"dep" : "shell.php5",
+			"tmpl" : "composer.sh"
+		},
+		{
+			"name" : "jDownloader",
+			"tmpl" : "jd.sh"
+		},
+		{
+			"name" : "ohmyzsh",
+			"tmpl" : "oh-my-zsh.sh"
+		}
+	]
+}
